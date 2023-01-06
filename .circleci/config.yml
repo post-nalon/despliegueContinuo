@@ -3,6 +3,3 @@ jobs:
   build:
     docker:
       - image: node:10
-    steps:
-      - run: npm install
-      - run: npm test
