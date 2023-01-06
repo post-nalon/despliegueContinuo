@@ -1,18 +1,19 @@
 version: 2
 jobs:
   build:
-    working_directory: ../html
+    working_directory: .
     docker:
       - image: node:10
     steps:
       - checkout
       - run: npm install
+      - run: npm run build
       - persist_to_workspace:
           root: .
           paths:
             - public
   deploy:
-    working_directory: ../html
+    working_directory: .
     docker:
       - image: node:10
     steps:
